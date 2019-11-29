@@ -1,11 +1,11 @@
 #HashMap Project
 
-L'objet Hashmap n'existe pas en C du coup faut le creer.\n
-Pour ceux qui ont Sublim-text : Project > open project > selectionner sublim_text_project.sublime-project.\n
-/!\ problemme avec les convertions de fin de ligne CRLF / LF
-
-script de compilation (linux commandes/cygwin + gcc):
-	./compile -e -g
+L'objet Hashmap n'existe pas en C du coup faut le creer.<br/>
+Pour ceux qui ont Sublim-text : Project > open project > selectionner sublim_text_project.sublime-project.<br/>
+/!\ problemme avec les convertions de fin de ligne CRLF / LF<br/>
+<br/>
+script de compilation (linux commandes/cygwin + gcc):<br/>
+	./compile -e -g<br/>
 
 	-e : executer apres compilation
 	-g : met a jour la branche sur github (requiere git)
