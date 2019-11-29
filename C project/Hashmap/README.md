@@ -1,6 +1,7 @@
 #HashMap Project
 
 L'objet Hashmap n'existe pas en C du coup faut le creer.
+/!\ problemme avec les convertions de fin de ligne CRLF / LF
 
 script de compilation (linux commandes/cygwin + gcc):
 	./compile -e -g
