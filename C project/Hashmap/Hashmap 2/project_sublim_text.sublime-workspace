@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"do_",
+				"do_compile_release"
+			],
+			[
 				"s",
 				"src\tAttr"
 			]
@@ -12,10 +16,13 @@
 	"buffers":
 	[
 		{
+			"contents": "#include <stdio.h>\n#include \"Main.h\"\n\n\nint main(){\n\tprintf(\"hello wolrd\");\n\treturn 0;\n}",
 			"file": "Main.c",
+			"file_size": 94,
+			"file_write_time": 132194900538074843,
 			"settings":
 			{
-				"buffer_size": 85,
+				"buffer_size": 87,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -24,18 +31,17 @@
 			"file": "error.txt",
 			"settings":
 			{
-				"buffer_size": 257,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
+				"buffer_size": 0,
+				"line_ending": "Windows"
 			}
 		},
 		{
 			"file": "compile.sh",
 			"settings":
 			{
-				"buffer_size": 31,
+				"buffer_size": 352,
 				"encoding": "UTF-8",
-				"line_ending": "Windows"
+				"line_ending": "Unix"
 			}
 		}
 	],
@@ -167,15 +173,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 85,
+						"buffer_size": 87,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								85,
-								85
+								87,
+								87
 							]
 						],
 						"settings":
@@ -201,15 +207,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 257,
+						"buffer_size": 0,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								257,
-								257
+								0,
+								0
 							]
 						],
 						"settings":
@@ -229,15 +235,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 31,
+						"buffer_size": 352,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								31,
-								31
+								34,
+								34
 							]
 						],
 						"settings":
@@ -245,7 +251,7 @@
 							"syntax": "Packages/ShellScript/Bash.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 3.33333333333,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
@@ -330,7 +336,7 @@
 		],
 		"width": 0.0
 	},
-	"selected_group": 0,
+	"selected_group": 1,
 	"settings":
 	{
 	},
