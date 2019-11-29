@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"has",
+				"hashCode"
+			],
+			[
 				"update",
 				"update_git"
 			],
@@ -23,7 +27,8 @@
 			"file": "src/Main.c",
 			"settings":
 			{
-				"buffer_size": 151,
+				"buffer_size": 1813,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
@@ -39,15 +44,26 @@
 			"file": "error.txt",
 			"settings":
 			{
-				"buffer_size": 0,
-				"line_ending": "Windows"
+				"buffer_size": 382,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
 			}
 		},
 		{
 			"file": "compile.sh",
 			"settings":
 			{
-				"buffer_size": 1176,
+				"buffer_size": 1139,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "update_git.sh",
+			"settings":
+			{
+				"buffer_size": 150,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		}
@@ -64,6 +80,10 @@
 		"selected_items":
 		[
 			[
+				"Package Control: inst",
+				"Package Control: Install Package"
+			],
+			[
 				"Package Control: insta",
 				"Package Control: Install Package"
 			],
@@ -76,7 +96,7 @@
 	},
 	"console":
 	{
-		"height": 0.0,
+		"height": 130.0,
 		"history":
 		[
 		]
@@ -98,6 +118,7 @@
 	],
 	"file_history":
 	[
+		"/D/librairie.txt",
 		"/C/cygwin64/home/samde/Documents/REPO_CS_P2024_CYGWIN/C project/Hashmap/sublim_text_project.sublime-project",
 		"/C/cygwin64/home/samde/Documents/REPO_CS_P2024_CYGWIN/C project/Hashmap/README.md",
 		"/C/cygwin64/home/samde/Documents/REPO_CS_P2024_CYGWIN/C project/Hashmap/sublim_text_project.sublime-workspace",
@@ -194,15 +215,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 151,
+						"buffer_size": 1813,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								151,
-								151
+								1549,
+								1549
 							]
 						],
 						"settings":
@@ -210,7 +231,7 @@
 							"syntax": "Packages/C Improved/C Improved.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 622.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -241,13 +262,13 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 4,
 					"type": "text"
 				}
 			]
 		},
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -256,15 +277,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 0,
+						"buffer_size": 382,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								185,
+								185
 							]
 						],
 						"settings":
@@ -275,7 +296,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -284,15 +305,43 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1176,
+						"buffer_size": 1139,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								320,
+								204
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/ShellScript/Bash.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 107.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "update_git.sh",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 150,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								150,
+								150
 							]
 						],
 						"settings":
@@ -303,7 +352,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -355,7 +404,7 @@
 	"project": "sublim_text_project.sublime-project",
 	"replace":
 	{
-		"height": 70.6666666667
+		"height": 42.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -385,7 +434,7 @@
 		],
 		"width": 0.0
 	},
-	"selected_group": 0,
+	"selected_group": 1,
 	"settings":
 	{
 	},
