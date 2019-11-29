@@ -1,6 +1,0 @@
-# depslib dependency file v1.0
-1575012872 source:c:\users\samde\desktop\repo_cs_p2024\c project\hashmap\hashmap\main.c
-	<stdio.h>
-	<stdlib.h>
-	<string.h>
-
