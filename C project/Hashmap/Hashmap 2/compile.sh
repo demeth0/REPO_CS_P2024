@@ -1,0 +1,1 @@
+gcc -o Debug Main.c 2>error.txt

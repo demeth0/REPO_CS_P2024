@@ -3,6 +3,6 @@
 
 
 int main(){
-
+	prinf("hello wolrd")
 	return 0;
 }

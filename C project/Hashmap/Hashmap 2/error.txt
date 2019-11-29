@@ -1,0 +1,8 @@
+Main.c: In function ‘main’:
+Main.c:6:2: warning: implicit declaration of function ‘prinf’; did you mean ‘printf’? [-Wimplicit-function-declaration]
+  prinf("hello wolrd")
+  ^~~~~
+  printf
+Main.c:7:2: error: expected ‘;’ before ‘return’
+  return 0;
+  ^~~~~~
