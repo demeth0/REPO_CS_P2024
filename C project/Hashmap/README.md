@@ -1,6 +1,7 @@
 #HashMap Project
 
-L'objet Hashmap n'existe pas en C du coup faut le creer.
+L'objet Hashmap n'existe pas en C du coup faut le creer.\n
+Pour ceux qui ont Sublim-text : Project > open project > selectionner sublim_text_project.sublime-project.\n
 /!\ problemme avec les convertions de fin de ligne CRLF / LF
 
 script de compilation (linux commandes/cygwin + gcc):
