@@ -1,4 +1,4 @@
-#HashMap Project
+# HashMap Project
 
 L'objet Hashmap n'existe pas en C du coup faut le creer.  
 Pour ceux qui ont Sublim-text : Project > open project > selectionner sublim_text_project.sublime-project.  

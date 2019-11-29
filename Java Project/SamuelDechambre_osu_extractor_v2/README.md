@@ -1,4 +1,4 @@
-#osuMP3 Project
+# osuMP3 Project
 
 projet qui extrait les musique du jeu osu  
 pour utiliser avant de compiler en executable jar changer les variables osuPath et outputPath, interface graphique pas encore implementer  
