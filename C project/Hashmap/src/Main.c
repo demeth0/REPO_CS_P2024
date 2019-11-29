@@ -34,7 +34,7 @@ Hashmap *createHashmap(int size){
 }
 
 //arythmetic operation for node repartition in the sub table of the hashmap
-int hashCode(Hashmap *map, int key, int value){
+int hashCode(Hashmap *map, int key){
 	int hash = 0;
 	if(key < 0){
 		hash = -(key%map->size);
@@ -66,7 +66,7 @@ void insert(Hashmap *map, int key, int value){
 	int pos = hashCode(map, key);
 	Node *node_sub_list = map->[pos];
 	Node *node_to_add = (Node*)malloc(sizeof(Node));
-	
+
 }
 
 //fonction main
