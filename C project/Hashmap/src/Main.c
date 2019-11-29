@@ -43,9 +43,30 @@ int hashCode(Hashmap *map, int key, int value){
 	}
 	return hash;
 }
-
+/*
+void insert(struct table *t,int key,int val){
+    int pos = hashCode(t,key);
+    struct node *list = t->list[pos];
+    struct node *newNode = (struct node*)malloc(sizeof(struct node));
+    struct node *temp = list;
+    while(temp){
+        if(temp->key==key){
+            temp->val = val;
+            return;
+        }
+        temp = temp->next;
+    }
+    newNode->key = key;
+    newNode->val = val;
+    newNode->next = list;
+    t->list[pos] = newNode;
+}
+*/
 void insert(Hashmap *map, int key, int value){
-
+	int pos = hashCode(map, key);
+	Node *node_sub_list = map->[pos];
+	Node *node_to_add = (Node*)malloc(sizeof(Node));
+	
 }
 
 //fonction main
