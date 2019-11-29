@@ -3,11 +3,9 @@ echo "start compiling"
 gcc -o bin/Main src/Main.c 2>error.txt
 
 execute_project(){
-	echo "running program:"
-	echo "--------------------------------------------------------------------------------"
+	echo "running program"
 	./bin/Main
 	echo
-	echo "--------------------------------------------------------------------------------"
 }
 
 update_git(){
@@ -24,14 +22,14 @@ do_execute=0
 while getopts "eg" opt
 do
     case $opt in
-    (e) do_all=0 ; do_exxecute=1 ;;
+    (e) do_all=0 ; do_execute=1 ;;
     (g) do_all=0 ; do_git=1 ;;
     (*) printf "Illegal option '-%s'\n" "$opt" && exit 1 ;;
     esac
 done
-
+echo "--------------------------------------------------------------------------------"
 (( do_all || do_execute )) && execute_project;
-
+echo "--------------------------------------------------------------------------------"
 (( do_all || do_git )) && update_git;
-
+echo "--------------------------------------------------------------------------------"
 echo "compilation finished"
