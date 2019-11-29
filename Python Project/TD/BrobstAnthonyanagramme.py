@@ -1,0 +1,73 @@
+import sys
+
+premierMot = input ("Veuillez entrer le premier mot : ")
+deuxiemeMot = input ("Veuillez entrer le deuxieme mot : ")
+print(" Vous voulez donc savoir si :",premierMot, "et :",deuxiemeMot,"forment un anagramme ?")
+choix = input ()
+if (choix == str("oui")) :
+
+    if (len (premierMot) == len (deuxiemeMot)) :
+        a = premierMot.count("a")
+        b = premierMot.count("b")
+        c = premierMot.count("c")
+        d = premierMot.count("d")
+        e = premierMot.count("e")
+        f = premierMot.count("f")
+        g = premierMot.count("g")
+        h = premierMot.count("h")
+        i = premierMot.count("i")
+        j = premierMot.count("j")
+        k = premierMot.count("k")
+        l = premierMot.count("l")
+        m = premierMot.count("m")
+        n = premierMot.count("n")
+        o = premierMot.count("o")
+        p = premierMot.count("p")
+        q = premierMot.count("q")
+        r = premierMot.count("r")
+        s = premierMot.count("s")
+        t = premierMot.count("t")
+        u = premierMot.count("u")
+        v = premierMot.count("v")
+        w = premierMot.count("v")
+        x = premierMot.count("x")
+        y = premierMot.count("y")
+        z = premierMot.count("z")
+
+        a1 = deuxiemeMot.count("a")
+        b1 = deuxiemeMot.count("b")
+        c1 = deuxiemeMot.count("c")
+        d1 = deuxiemeMot.count("d")
+        e1 = deuxiemeMot.count("e")
+        f1 = deuxiemeMot.count("f")
+        g1 = deuxiemeMot.count("g")
+        h1 = deuxiemeMot.count("h")
+        i1 = deuxiemeMot.count("i")
+        j1 = deuxiemeMot.count("j")
+        k1 = deuxiemeMot.count("k")
+        l1 = deuxiemeMot.count("l")
+        m1 = deuxiemeMot.count("m")
+        n1 = deuxiemeMot.count("n")
+        o1 = deuxiemeMot.count("o")
+        p1 = deuxiemeMot.count("p")
+        q1 = deuxiemeMot.count("q")
+        r1 = deuxiemeMot.count("r")
+        s1 = deuxiemeMot.count("s")
+        t1 = deuxiemeMot.count("t")
+        u1 = deuxiemeMot.count("u")
+        v1 = deuxiemeMot.count("v")
+        w1 = deuxiemeMot.count("v")
+        x1 = deuxiemeMot.count("x")
+        y1 = deuxiemeMot.count("y")
+        z1 = deuxiemeMot.count("z")
+        if (a == a1 and b == b1 and c == c1 and d == d1 and e == e1 and f == f1 and g == g1 and h == h1 and i == i1 and j == j1 and k == k1 and l == l1 and m == m1 and n == n1 and o == o1 and p == p1 and q == q1 and r == r1 and s == s1 and t == t1 and u == u1 and v == v1 and w == w1 and x == x1 and y == y1 and z == z1) :
+            print("Congratulations : c'est bien un anagramme")
+        else :
+            print("Looser : c'est pas un anagramme")
+    else :
+        print("Ca risque pas d'etre un anagramme, il y a pas le meme nombre de lettre")
+elif (choix == str("non")) :
+    print("Qu'est ce que vous foutez ici alors, degagez !!!")
+    sys.exit
+else :
+    sys.exit
