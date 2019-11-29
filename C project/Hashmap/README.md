@@ -9,5 +9,5 @@ script de compilation (linux commandes/cygwin + gcc):
 	-e : executer apres compilation
 	-g : met a jour la branche sur github (requiere git)
 
-	les messages d'erreurs sont stoqker dans error.txt
+	les messages d'erreurs sont stocker dans error.txt
 
