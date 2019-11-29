@@ -24,14 +24,14 @@ do_execute=0
 while getopts "eg" opt
 do
     case $opt in
-    (g) do_all=0 ; do_git=1 ;;
     (e) do_all=0 ; do_exxecute=1 ;;
+    (g) do_all=0 ; do_git=1 ;;
     (*) printf "Illegal option '-%s'\n" "$opt" && exit 1 ;;
     esac
 done
 
-(( do_all || do_git )) && update_git;
-
 (( do_all || do_execute )) && execute_project;
+
+(( do_all || do_git )) && update_git;
 
 echo "compilation finished"
