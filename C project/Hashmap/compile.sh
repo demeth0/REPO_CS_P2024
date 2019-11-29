@@ -32,11 +32,12 @@ echo "start compiling"
 
 #compile le projet dans src (main file) et genere le exe dans ./bin
 gcc -o bin/Main src/Main.c 2>error.txt
+echo "compilation finished"
+cat error.txt
 echo "--------------------------------------------------------------------------------"
 (( do_execute )) && execute_project;
 echo "--------------------------------------------------------------------------------"
 (( do_git )) && update_git;
 echo "--------------------------------------------------------------------------------"
-echo "compilation finished"
-cat error.txt
+
 #end : execution des commandes
