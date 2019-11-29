@@ -1,0 +1,427 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"update",
+				"update_git"
+			],
+			[
+				"do_",
+				"do_compile_release"
+			],
+			[
+				"s",
+				"src\tAttr"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "src/Main.c",
+			"settings":
+			{
+				"buffer_size": 118,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/Main.h",
+			"settings":
+			{
+				"buffer_size": 40,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "error.txt",
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "compile.sh",
+			"settings":
+			{
+				"buffer_size": 844,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "README.md",
+			"settings":
+			{
+				"buffer_size": 75,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"Package Control: insta",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ins",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/cygwin64/home/samde/Documents/REPO_CS_P2024_CYGWIN",
+		"/C/cygwin64/home/samde/Documents/REPO_CS_P2024_CYGWIN/C project",
+		"/C/cygwin64/home/samde/Documents/REPO_CS_P2024_CYGWIN/C project/Hashmap",
+		"/C/cygwin64/home/samde/Documents/REPO_CS_P2024_CYGWIN/C project/Hashmap/src"
+	],
+	"file_history":
+	[
+		"/C/cygwin64/home/samde/Documents/REPO_CS_P2024_CYGWIN/C project/Hashmap/Main.c",
+		"/C/cygwin64/home/samde/Documents/REPO_CS_P2024_CYGWIN/.git/COMMIT_EDITMSG",
+		"/C/cygwin64/home/samde/Documents/REPO_CS_P2024_CYGWIN/C project/Hashmap/Hashmap 2/Main.c",
+		"/C/cygwin64/home/samde/Documents/REPO_CS_P2024_CYGWIN/C project/Hashmap/Hashmap 2/error.txt",
+		"/C/cygwin64/home/samde/Documents/REPO_CS_P2024_CYGWIN/C project/Hashmap/Hashmap 2/compile.sh",
+		"/C/cygwin64/home/samde/Documents/REPO_CS_P2024_CYGWIN/C project/Hashmap/Hashmap 2/Command/compile.sh",
+		"/C/cygwin64/home/samde/Documents/REPO_CS_P2024_CYGWIN/C project/Hashmap/Hashmap 2/init.sh",
+		"/C/Users/samde/Downloads/codeblock theme/readme.txt",
+		"/C/Users/samde/Desktop/REPO_CS/main.html",
+		"/C/Users/samde/Desktop/rootme/t.js",
+		"/C/Users/samde/Desktop/t.js",
+		"/C/Users/samde/Desktop/Unity/old project assets/Assets/test/Script/PlayerControllerDashV2.cs",
+		"/C/Users/samde/Desktop/secret_message.txt",
+		"/C/Users/samde/Desktop/rootme/steganographie/twitter secret message/secret_message.txt",
+		"/C/Users/samde/Desktop/rootme/steganographie/twitter secret message/test.bat",
+		"/C/Users/samde/Desktop/rootme/steganographie/test.png",
+		"/C/Users/samde/Desktop/C C++ C#/gcc/var/log/packages/yypkg_db",
+		"/C/Users/samde/Desktop/rootme/t2.html",
+		"/C/Users/samde/AppData/Local/Google/Chrome/User Data/Default/Cookies-journal",
+		"/C/Users/samde/AppData/Local/Google/Chrome/User Data/Default/Cookies",
+		"/C/Users/samde/AppData/Local/Google/Chrome/User Data/Default/History",
+		"/C/Users/samde/AppData/Local/Google/Chrome/User Data/Default/Cache/f_001ae3",
+		"/C/Users/samde/AppData/Local/Google/Chrome/User Data/Default/Cache/f_001ae4",
+		"/C/Users/samde/AppData/Local/Temp/chrome_BITS_15364_973882775/BIT1532.tmp",
+		"/C/Users/samde/Desktop/rootme/ch2.jpg",
+		"/C/Users/samde/Desktop/rootme/steganographie/ch2",
+		"/C/Users/samde/Desktop/rootme/ch2.TXT",
+		"/C/Users/samde/Desktop/Python/COURS.py",
+		"/C/Users/samde/Desktop/rootme/index.php",
+		"/C/Users/samde/Downloads/Koikatsu.Party/README.txt",
+		"/C/Users/samde/Desktop/rootme/native js",
+		"/C/Users/samde/Desktop/rootme/CPU-20191025T132745.cpuprofile",
+		"/C/Users/samde/Desktop/rootme/output.html",
+		"/C/Users/samde/Desktop/rootme/CPU-20191025T185106.cpuprofile",
+		"/C/Users/samde/Desktop/Unity/Script rewritting/new/script/player/playerBehavior_v5/playerBehavior.cs",
+		"/C/Users/samde/Desktop/Unity/Script rewritting/new/script/player/playerBehavior_v5/Module/DashModule.cs",
+		"/C/Users/samde/Desktop/rootme/network-log.har",
+		"/C/Users/samde/Desktop/Unity/Script rewritting/new/script/DomeriStudio.cs",
+		"/C/Users/samde/Desktop/Star ship/SpaceX starship text",
+		"/D/Project/eclipse/dic.txt",
+		"/C/Users/samde/Documents/MDP.txt",
+		"/C/Users/samde/Desktop/bolognaise.html"
+	],
+	"find":
+	{
+		"height": 39.3333333333
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "src/Main.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 118,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C Improved/C Improved.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/Main.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 40,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								40,
+								40
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 2,
+					"file": "error.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "compile.sh",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 844,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/ShellScript/Bash.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 82.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "README.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 75,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Markdown/Markdown.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 24.0
+	},
+	"input":
+	{
+		"height": 34.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				0,
+				1,
+				1,
+				2
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			0.715601300108,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "Packages/ShellScript/ShellScript.sublime-build",
+	"project": "project_sublim_text.sublime-project",
+	"replace":
+	{
+		"height": 44.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 192.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
