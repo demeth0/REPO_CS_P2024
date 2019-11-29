@@ -4,6 +4,6 @@
 
 int main(){
 	printf("hello wolrd");
-	printf("finished edit");
+	printf("finished ");
 	return 0;
 }
