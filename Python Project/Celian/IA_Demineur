@@ -1,0 +1,349 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Bot resolvant le demineur en ligne sur http://demineur.hugames.fr
+Il est toutefois facilement adaptable pour d'autres sites, si
+vous arrivez a interagir avec selenium sur le-dit site.
+
+Si vous voulez le tester il faut changer chemin_capture avec 
+le dossier ou le bot vas pouvoir vous montrer les captures
+de son avancement.
+
+Il faut egalement indiquer l'emplacement de votre phantomjs
+(ou changer dans le code le type de webdriver)
+
+Il faut evidemment aussi etre connecte a internet
+
+@author: Celian
+"""
+
+import random
+import os
+from selenium import webdriver
+# apparement on peut utiliser selenium-move-cursor pour plus de liberte (a tester)
+from PIL import Image
+
+# A parametrer selon vos besoins
+
+chemin_capture = "/home/celian/Documents/web/demineur/"
+emplacement_phantomJS = '/usr/local/share/phantomjs-2.1.1-linux-x86_64/bin/phantomjs'
+niveau = 2# A changer selon la difficulte que l'on veut sur le site (1/2/3)
+
+
+
+#par defaut reecrit dans 1 si tout les numeros des dossiers sont deja existant
+capture_dossier = chemin_capture+"1/"
+
+i = 0
+while i < 20:#nombre max de dossiers qu'il peut creer
+    test_dossier = "/home/celian/Documents/web/demineur/"+str(i)+"/"
+    if not os.path.exists(test_dossier):
+        capture_dossier = test_dossier
+        os.mkdir(test_dossier)
+        i = 400
+    i += 1
+    
+
+# Ouverture de la page dans une simulation de moteur de recherche 
+driver = webdriver.PhantomJS(executable_path=emplacement_phantomJS)
+my_url = "http://demineur.hugames.fr/#level-"+str(niveau)
+driver.get(my_url)
+
+
+
+# recupere ces infos dans le code source dynamique (avec javascript)
+elem_table = driver.find_element_by_class_name(name="minesweeper-table")
+
+version_table = elem_table.get_attribute("id").replace("minesweeper-table-", "")
+
+
+def difficulte(diff):
+    """retourne les infos de jeu correspondant a la difficulte indique"""
+    
+    #par defaut diff == 1
+    nbr_lignes = 9
+    nbr_colonnes = 9
+    nbr_cases = nbrLignes*nbrColonnes
+    nbr_mines = 10
+    
+    if diff == 2:
+        nbr_lignes = 16
+        nbr_colonnes = 16
+        nbr_cases = nbrLignes*nbrColonnes
+        nbr_mines = 40
+        
+    elif diff == 3:
+        
+        nbr_lignes = 16
+        nbr_colonnes = 30
+        nbr_cases = nbrLignes*nbrColonnes
+        nbr_mines = 99
+        
+    return nbr_cases, nbr_mines, nbr_lignes, nbr_colonnes
+
+
+casesRestantes, mines, nbrLignes, nbrColonnes = difficulte(niveau)
+
+fini = False
+nbr_flags = 0
+
+
+"""
+La grille de jeu avec :
+- {0,1,2,3,4,5,6,7,8} => nbr de bombes proches
+
+- {-1} => bombe
+- {-2} => case non ouverte
+- {-3} => flag
+- {-4} => interrogation
+"""
+grille = [[-2]*nbrColonnes for i in range(nbrLignes)]
+
+def actualiserGrille():
+    """
+    - recolte les infos sur la grille de jeu apparues sur le site
+    - est appele a chaque avancement dans le jeu
+    - lance aussi les captures d'ecran
+    """
+    for i in range(nbrLignes):
+        for j in range(nbrColonnes):
+            nom_case = "minesweeper-"+version_table+"-"+str(j)+"-"+str(i)
+            case_element = driver.find_element_by_id(id_=nom_case)
+            mine_class = case_element.get_attribute('class')
+            
+            if mine_class.find("-mine") != -1:
+                grille[i][j] = -1
+                if not fini:
+                    fin_de_partie(False)
+            elif mine_class.find("-clicked") != -1:
+                 #mine_class est de la forme : 
+                 #minesweeper-nb minesweeper-clicked minesweeper-nb-0 minesweeper-class-none
+           
+                mine_class = mine_class.replace("minesweeper-nb minesweeper-clicked minesweeper-nb-", "")
+                mine_class = mine_class.replace(" minesweeper-class-none", "")
+                grille[i][j] = int(mine_class)
+                
+            
+    screenshot()
+    
+    if not fini:           
+        recherche()
+
+      
+def screenshot():
+    """
+    capture la zone de jeu dans le dossier test_dossier,
+    avec comme nom imgX.png avec X le nombre de drapeaux
+    de signalement posés
+    """
+    
+    grille_elem = driver.find_element_by_id(id_="minesweeper-div-"+version_table)
+    
+    
+    location = grille_elem.location
+    size = grille_elem.size
+
+    driver.save_screenshot(test_dossier+"img"+str(nbr_flags)+".png")
+
+    x = location['x']
+    y = location['y']
+    width = location['x']+size['width']
+    height = location['y']+size['height']
+
+    im = Image.open(test_dossier + "img" + str(nbr_flags) + ".png")
+    im = im.crop((int(x), int(y), int(width), int(height)))
+    im.save(test_dossier+"img"+str(nbr_flags)+".png")
+       
+def fin_de_partie(win):
+    global fini
+    fini = True
+        
+    if win:
+        print(">>>>>>>>>>>>>bravo>>>>>>>>>>>>>>>>")
+    else:       
+        print("<<<<<<<<<<<<<hooh... Perdu<<<<<<<<<<<<<<")
+           
+            
+def click_case(caseY, caseZ):
+    nom_case = "minesweeper-" + version_table + "-" + str(caseZ) + "-" + str(caseY)
+    case_element = driver.find_element_by_id(id_=nom_case)
+           
+    case_element.click()
+           
+def flag_case(caseY, caseZ):
+    global nbr_flags
+    nbr_flags += 1
+    print("Nombre de flags :", nbr_flags)
+    
+    nom_case = "minesweeper-"+version_table+"-"+str(caseZ)+"-"+str(caseY)
+    case_element = driver.find_element_by_id(id_=nom_case)
+    
+    actionChains = webdriver.ActionChains(driver)
+    grille[caseY][caseZ] = -3
+    actionChains.context_click(case_element).perform()
+  
+    
+def caseInfos(caseY, caseZ):
+    """
+    scrute les cases autour de celle en parametre 
+    pour recolter des infos    
+    """
+    
+    flags_existants = 0
+    cases_inconnues = 0
+    
+    for i in [-1, 0, 1]:
+        for j in [-1, 0, 1]:
+            
+            if not(j == 0 and i == 0):
+                tempY = caseY + i
+                tempZ = caseZ +j
+                #evite de deborder en dehors de la grille
+                if not(tempY < 0 or tempZ < 0 or tempY >= nbrLignes or tempZ >= nbrColonnes):
+                    
+                    valeurCase = grille[tempY][tempZ]
+                
+                    if valeurCase == -3:
+                        flags_existants += 1
+                    elif valeurCase == -2:
+                        cases_inconnues += 1
+                        
+    return flags_existants, cases_inconnues
+
+        
+def search_flag(caseY, caseZ):
+    
+    """retourne les emplacements où on peut poser un drapeau de manière evidente """ 
+    
+    mainCaseValue = grille[caseY][caseZ]
+    flags = []
+    
+    flags_existants, cases_inconnues = caseInfos(caseY, caseZ)
+     
+    
+   
+                    
+    if mainCaseValue == flags_existants + cases_inconnues:
+        
+        for i in [-1, 0, 1]:
+            for j in [-1, 0, 1]:
+                tempY = caseY + i
+                tempZ = caseZ + j
+                #evite de deborder en dehors de la grille
+                if not(tempY < 0 or tempZ < 0 or tempY >= nbrLignes or tempZ >= nbrColonnes):
+                    if grille[tempY][tempZ] == -2:
+                        flags.append([tempY, tempZ])
+                        flag_case(tempY, tempZ)
+                
+    return flags   
+         
+def search_cvide(caseY, caseZ): 
+    """retourne les emplacements où on peut cliquer de manière evidente """
+    
+    mainCaseValue = grille[caseY][caseZ]
+    nbCasesOuvertes = 0
+    flags_existants, cases_inconnues = caseInfos(caseY, caseZ)
+    
+    
+                    
+    if mainCaseValue == flags_existants:
+        
+        for i in [-1, 0, 1]:
+            for j in [-1, 0, 1]:
+                tempY = caseY + i
+                tempZ = caseZ + j
+                #evite de deborder en dehors de la grille
+                if not(tempY < 0 or tempZ < 0 or tempY >= nbrLignes or tempZ >= nbrColonnes):
+                    if grille[tempY][tempZ] == -2:
+                        nbCasesOuvertes += 1
+                        click_case(tempY, tempZ)
+                
+    return nbCasesOuvertes   
+
+def actualiser_autour(caseY, caseZ):
+    cases_ouvertes = 0
+    for i in [-1, 0, 1]:
+        for j in [-1, 0, 1]:
+            
+            flags = search_flag(caseY, caseZ)
+            cases_ouvertes += search_cvide(caseY, caseZ)
+            
+            if len(flags) != 0:
+               
+                for flag in flags:  
+                    cases_ouvertes += actualiser_autour(flag[0], flag[1])
+                    
+    return cases_ouvertes         
+
+def reflexion():
+    cases_ouvertes = 0
+    for y in range(nbrLignes):
+        for z in range(nbrColonnes):
+            cases_ouvertes += actualiser_autour(y, z)
+    return cases_ouvertes
+            
+def reflexion_approfondie():#TODO ameliorer l'IA
+    print("Il faudrait que j'ai une reflexion plus approfondie :(")
+    return 0
+
+def cases_restantes():
+    cases_restantes = 0
+    
+    for y in range(nbrLignes):
+        for z in range(nbrColonnes):
+            if grille[y][z] == -2:
+                cases_restantes += 1
+    if cases_restantes == 0:
+        global fini
+        fini = True
+    return cases_restantes
+    
+def click_random():
+    
+    case_restantes = cases_restantes()
+    if case_restantes != 0:
+        
+        c_inconnues_iterator = random.randint(0, case_restantes-1)  
+        
+        y, z = 0, 0
+         
+        while y < nbrLignes and c_inconnues_iterator >= 0:
+            while z < nbrColonnes and c_inconnues_iterator >= 0:
+                if grille[y][z] == -2:
+                    if c_inconnues_iterator == 0:
+                        click_case(y, z)
+                    c_inconnues_iterator -= 1
+                z += 1
+            y += 1
+            z = 0
+    
+def recherche():
+    if fini:
+        fin_de_partie(True)
+        
+    else:
+        
+        cases_ouvertes = reflexion()
+        
+        if cases_ouvertes > 0:
+            actualiserGrille()
+            
+        else:
+       
+            cases_ouvertes = reflexion_approfondie()
+        
+            if cases_ouvertes > 0:
+                actualiserGrille()
+            else:
+                click_random()
+                print("Du coup je clique au hasard ...")
+                actualiserGrille()
+
+
+click_random()
+
+# on demarre l'usine a gaz
+actualiserGrille()
+
+# ne pas oublier sinon tout explose ;)
+driver.close()
