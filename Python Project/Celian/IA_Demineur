@@ -36,7 +36,7 @@ capture_dossier = chemin_capture+"1/"
 
 i = 0
 while i < 20:#nombre max de dossiers qu'il peut creer
-    test_dossier = "/home/celian/Documents/web/demineur/"+str(i)+"/"
+    test_dossier = chemin_capture+str(i)+"/"
     if not os.path.exists(test_dossier):
         capture_dossier = test_dossier
         os.mkdir(test_dossier)
