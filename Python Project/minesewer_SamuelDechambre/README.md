@@ -5,163 +5,163 @@ pas encore finis :
   
 customisation possible avec les variables en début de code (en majuscule)  
  <table>
- 	<tr> <!-->*12<-->
- 		<th> <!-->nom<-->
+ 	<tr> 
+ 		<th> 
  			Nom
  		</th>
- 		<th> <!-->valeur par def<-->
+ 		<th> 
  			Default value
  		</th>
- 		<th> <!-->commentaire<-->
+ 		<th> 
  			comment
  		</th>
  	</tr>
- 	<tr> <!-->*12<-->
- 		<th> <!-->nom<-->
+ 	<tr> 
+ 		<th> 
  			FRAME_WIDTH
  		</th>
- 		<th> <!-->valeur par def<-->
+ 		<th> 
  			 700 px
  		</th>
- 		<th> <!-->commentaire<-->
+ 		<th> 
  		</th>
  	</tr>
- 	<tr> <!-->*12<-->
- 		<th> <!-->nom<-->
+ 	<tr> 
+ 		<th> 
  			FRAME_HEIGHT
  		</th>
- 		<th> <!-->valeur par def<-->
+ 		<th> 
  		 	500 px
  		</th>
- 		<th> <!-->commentaire<-->
+ 		<th> 
  		</th>
  	</tr>
- 	<tr> <!-->*12<-->
- 		<th> <!-->nom<-->
+ 	<tr> 
+ 		<th> 
 			BOARD_REFRESH_RATE
  		</th>
- 		<th> <!-->valeur par def<-->
+ 		<th> 
  			int(1000/60)
  		</th>
- 		<th> <!-->commentaire<-->
+ 		<th> 
  			the value is in ms
  		</th>
  	</tr>
- 	<tr> <!-->*12<-->
- 		<th> <!-->nom<-->
+ 	<tr> 
+ 		<th> 
  			BOARD_WIDTH
  		</th>
- 		<th> <!-->valeur par def<-->
+ 		<th> 
  		 	500 px
  		</th>
- 		<th> <!-->commentaire<-->
+ 		<th> 
  		</th>
  	</tr>
- 	<tr> <!-->*12<-->
- 		<th> <!-->nom<-->
+ 	<tr> 
+ 		<th> 
  			BOARD_HEIGHT
  		</th>
- 		<th> <!-->valeur par def<-->
+ 		<th> 
  			500 px
  		</th>
- 		<th> <!-->commentaire<-->
+ 		<th> 
  		</th>
  	</tr>
- 	<tr> <!-->*12<-->
- 		<th> <!-->nom<-->
+ 	<tr> 
+ 		<th> 
  			BOARD_BACKGROUND
  		</th>
- 		<th> <!-->valeur par def<-->
+ 		<th> 
  			"black"
  		</th>
- 		<th> <!-->commentaire<-->
+ 		<th> 
  		</th>
  	</tr>
- 	<tr> <!-->*12<-->
- 		<th> <!-->nom<-->
+ 	<tr> 
+ 		<th> 
  			CASE_WIDTH
  		</th>
- 		<th> <!-->valeur par def<-->
+ 		<th> 
  			1
  		</th>
- 		<th> <!-->commentaire<-->
+ 		<th> 
  			CASE_HEIGHT == CASE_WIDTH  1 represent the relation with the vector X and Y (1*SIZE_X_VECTOR, 1*SIZE_X_VECTOR)
  		</th>
  	</tr>
- 	<tr> <!-->*12<-->
- 		<th> <!-->nom<-->
+ 	<tr> 
+ 		<th> 
  			SIZE_X_VECTOR
  		</th>
- 		<th> <!-->valeur par def<-->
+ 		<th> 
  			30 px
  		</th>
- 		<th> <!-->commentaire<-->
+ 		<th> 
  			if you want to change the scale of the canvas you also need to resize the textures
  		</th>
  	</tr>
- 	<tr> <!-->*12<-->
- 		<th> <!-->nom<-->
+ 	<tr> 
+ 		<th> 
  			SIZE_Y_VECTOR
  		</th>
- 		<th> <!-->valeur par def<-->
+ 		<th> 
  			30 px
  		</th>
- 		<th> <!-->commentaire<-->
+ 		<th> 
  			if you want to change the scale of the canvas you also need to resize the textures
  		</th>
  	</tr>
- 	<tr> <!-->*12<-->
- 		<th> <!-->nom<-->
+ 	<tr> 
+ 		<th> 
  			RES_MINE_CASE
  		</th>
- 		<th> <!-->valeur par def<-->
+ 		<th> 
  			"mine_case_x30.gif"
  		</th>
- 		<th> <!-->commentaire<-->
+ 		<th> 
  			only the file name, will be concatenatedwith the EXTERNAL_RES_FILE_PATH
  		</th>
  	</tr>
- 	<tr> <!-->*12<-->
- 		<th> <!-->nom<-->
+ 	<tr> 
+ 		<th> 
  			RES_COVERED_CASE
  		</th>
- 		<th> <!-->valeur par def<-->
+ 		<th> 
  			"covered_case_x30.gif"
  		</th>
- 		<th> <!-->commentaire<-->
+ 		<th> 
  			only the file name, will be concatenatedwith the EXTERNAL_RES_FILE_PATH
  		</th>
  	</tr>
- 	<tr> <!-->*12<-->
- 		<th> <!-->nom<-->
+ 	<tr> 
+ 		<th> 
  			RES_DISCOVERED_CASE
  		</th>
- 		<th> <!-->valeur par def<-->
+ 		<th> 
  			"discovered_case_x30.gif"
  		</th>
- 		<th> <!-->commentaire<-->
+ 		<th> 
  			only the file name, will be concatenatedwith the EXTERNAL_RES_FILE_PATH
  		</th>
  	</tr>
- 	<tr> <!-->*12<-->
- 		<th> <!-->nom<-->
+ 	<tr>
+ 		<th> 
  			RES_FLAGGED_CASE
  		</th>
- 		<th> <!-->valeur par def<-->
+ 		<th> 
  			"flagged_case_x30.gif"
  		</th>
- 		<th> <!-->commentaire<-->
+ 		<th> 
  			only the file name, will be concatenatedwith the EXTERNAL_RES_FILE_PATH
  		</th>
  	</tr>
- 	<tr> <!-->*12<-->
- 		<th> <!-->nom<-->
+ 	<tr> 
+ 		<th> 
  			RES_DISCOVERED_CASE_TAGGED
  		</th>
- 		<th> <!-->valeur par def<-->
+ 		<th> 
  			["discovered_case_x30.gif","discovered_case_1_x30.gif","discovered_case_2_x30.gif","discovered_case_3_x30.gif","discovered_case_4_x30.gif","discovered_case_5_x30.gif","discovered_case_6_x30.gif","discovered_case_7_x30.gif","discovered_case_8_x30.gif"]
  		</th>
- 		<th> <!-->commentaire<-->
+ 		<th> 
  			only the file name, will be concatenatedwith the EXTERNAL_RES_FILE_PATH
  		</th>
  	</tr>
