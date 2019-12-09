@@ -159,7 +159,7 @@ customisation possible avec les variables en début de code (en majuscule)
  			RES_DISCOVERED_CASE_TAGGED
  		</th>
  		<th> 
- 			["discovered_case_x30.gif","discovered_case_1_x30.gif","discovered_case_2_x30.gif","discovered_case_3_x30.gif","discovered_case_4_x30.gif","discovered_case_5_x30.gif","discovered_case_6_x30.gif","discovered_case_7_x30.gif","discovered_case_8_x30.gif"]
+ 			["discovered_case_x30.gif","discovered_case_1_x30.gif",  "discovered_case_2_x30.gif","discovered_case_3_x30.gif",   "discovered_case_4_x30.gif","discovered_case_5_x30.gif",  "discovered_case_6_x30.gif","discovered_case_7_x30.gif",  "discovered_case_8_x30.gif"]
  		</th>
  		<th> 
  			only the file name, will be concatenatedwith the EXTERNAL_RES_FILE_PATH
@@ -179,8 +179,6 @@ customisation possible avec les variables en début de code (en majuscule)
 
 </table>
  	
-
-EXTERNAL_RES_FILE_PATH = "ressources\\"
 
 
 J'ai pas eu le temps de commenter je le fait des que je peut pour les edits.  
