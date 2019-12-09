@@ -4,8 +4,7 @@
 	<li>interface graphique (bouton, selection / changement parametre)</li></ul>  </p>
 
 <p>J'ai pas eu le temps de commenter je le fait des que je peut pour les edits</p>
-</br> 
-___
+</br>
 <p>customisation possible avec les variables en début de code (en majuscule)  </p>
  <table>
  	<tr> 
