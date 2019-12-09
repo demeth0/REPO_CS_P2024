@@ -140,7 +140,7 @@ customisation possible avec les variables en début de code (en majuscule)
  			"discovered_case_x30.gif"
  		</th>
  		<th> 
- 			only the file name, will be concatenatedwith the EXTERNAL_RES_FILE_PATH
+ 			only the file name, will be concatenatedwith the EXTERNAL_RES_FILE_PATH. Cette variable n'est pas utilisée deja comprise dans RES_DISCOVERED_CASE_TAGGED
  		</th>
  	</tr>
  	<tr>
