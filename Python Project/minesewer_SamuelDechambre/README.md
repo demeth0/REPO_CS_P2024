@@ -1,7 +1,7 @@
 # Minesewer
 pas encore finis :  
-	-condition d'arret (gagner perdre)  
-	-interface graphique (bouton, selection / changement parametre)  
+	<ul><li>condition d'arret (gagner perdre)</li>  
+	<li>interface graphique (bouton, selection / changement parametre)</li></ul>  
 	
  J'ai pas eu le temps de commenter je le fait des que je peut pour les edits
   
