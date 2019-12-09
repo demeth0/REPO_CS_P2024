@@ -1,7 +1,7 @@
 # Minesewer
-pas encore finis :  
+<p style="bborder: 3px solid black">pas encore finis :  
 	<ul><li>condition d'arret (gagner perdre)</li>  
-	<li>interface graphique (bouton, selection / changement parametre)</li></ul>  
+	<li>interface graphique (bouton, selection / changement parametre)</li></ul>  </p>
 	
  J'ai pas eu le temps de commenter je le fait des que je peut pour les edits
   
