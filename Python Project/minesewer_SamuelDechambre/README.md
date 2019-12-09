@@ -1,7 +1,9 @@
 # Minesewer
 pas encore finis :  
-	condition d'arret (gagner perdre)  
-	interface graphique (bouton, selection / changement parametre)  
+	-condition d'arret (gagner perdre)  
+	-interface graphique (bouton, selection / changement parametre)  
+	
+ J'ai pas eu le temps de commenter je le fait des que je peut pour les edits
   
 customisation possible avec les variables en début de code (en majuscule)  
  <table>
@@ -181,4 +183,4 @@ customisation possible avec les variables en début de code (en majuscule)
  	
 
 
-J'ai pas eu le temps de commenter je le fait des que je peut pour les edits.  
+  
