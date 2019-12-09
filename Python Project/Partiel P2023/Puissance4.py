@@ -29,6 +29,7 @@ Created on Fri Oct 18 10:12:35 2019
 # Les noms des fonctions ont été traduite en Rançais,
 # pour une meilleure compréhension.
 #
+# V1.01
 
 
 def creer_matrice(Colonne,Ligne,Initialisation): #PARTIEL : Exercice 1.1
@@ -72,11 +73,11 @@ def insertion_colonne_possible(Colonne,Plateau_de_jeu): #PARTIEL : Exercice 4.1
 
 def jeu_plein(Plateau_de_jeu): #PARTIEL : Exercice 4.2
     Resultat = False
-    Plateau_de_jeu = 0
+    Recurrence = 0
     for indice in range(0,7):
         if (Plateau_de_jeu[0][indice] != ' '):
-            Plateau_de_jeu += 1
-            if Plateau_de_jeu == 7:
+            Recurrence += 1
+            if Recurrence == 7:
                 Resultat = True
     return Resultat
 #    Retourne si le plateau de jeu donné en paramètre est plein
@@ -118,68 +119,62 @@ def avoir_colonne_joueur(Symbole,Plateau_de_jeu): #MODIF : Exercice 4.5
 def verification_horizontale(Colonne,Ligne,Symbole,Plateau_de_jeu): #ORIGINAL
     Quatre_Aligne = False
     Recurrence = 0
-    for indice in range(Colonne-2,Colonne+4):
-        if (indice > 0 and indice <= len(Plateau_de_jeu[Ligne])-1):
-            if (Plateau_de_jeu[Ligne][indice] == Plateau_de_jeu[Ligne][indice-1] and Plateau_de_jeu[Ligne][indice] == Symbole):
+    for indice in range(Colonne-3,Colonne+4):
+        if (indice >= 0 and indice < len(Plateau_de_jeu[Ligne])):
+            if (Plateau_de_jeu[Ligne][indice] == Symbole):
                 Recurrence +=1
-                if Recurrence == 3:
+                if Recurrence == 4:
                     Quatre_Aligne = True
             else:
                 Recurrence = 0
     return Quatre_Aligne
 #    Vérifie si 4 pions sont alignés horizontalement ;
-#    L'idée principale est de comparer pour un pion précis si le précédent
-#    (de gauche) est de la même couleur, et que le pion lui soit de
+#    L'idée principale est de comparer pour un pion précis s'il est de
 #    la couleur Symbole donné en paramètre
-#    On applique cette vérifications plusieurs fois, dans des bornes calculées
+#    On applique cette vérification plusieurs fois, dans des bornes calculées
 #    par rapport à la position de la colonne du pion donné en paramètre,
 #    On empêche cependant à la vérification de s'effectuer en dehors de la ligne
-#    La vérification s'effectue alors de la colonne-2 jusqu'à la colonne+3,
-#    ainsi qu'à la colonne 1 minimum et la colonne 6 maximum,
-#    vérifiant alors les pions dans les positions de la colonne-3 à la colonne+3,
-#    positionés au minumum à la colonne 0 et au maximum à la colonne 6
+#    La vérification s'effectue alors de la colonne-3 jusqu'à la colonne+3,
+#    ainsi qu'à la colonne 0 minimum et la colonne 6 maximum
 #    On défini alors une variable Récurrence comptant le nombre de vérification
 #    vraie, et cette variable passe la vérification globale horizontale vraie
-#    s'il elle a été compté vraie au moins 3 fois d'affilé
+#    s'il elle a été compté vraie au moins 4 fois d'affilé
 
 
 def verification_verticale(Colonne,Ligne,Symbole,Plateau_de_jeu): #ORIGINAL
     Quatre_Aligne = False
     Recurrence = 0
-    for indice in range(Ligne-2,Ligne+4):
-        if (indice > 0 and indice <= len(Plateau_de_jeu)-1):
-            if (Plateau_de_jeu[indice][Colonne] == Plateau_de_jeu[indice-1][Colonne] and Plateau_de_jeu[indice][Colonne] == Symbole):
+    for indice in range(Ligne-3,Ligne+4):
+        if (indice >= 0 and indice < len(Plateau_de_jeu)):
+            if (Plateau_de_jeu[indice][Colonne] == Symbole):
                 Recurrence +=1
-                if Recurrence == 3:
+                if Recurrence == 4:
                     Quatre_Aligne = True
             else:
                 Recurrence = 0
     return Quatre_Aligne
 #    Vérifie si 4 pions sont alignés verticalement ;
-#    L'idée principale est de comparer pour un pion précis si le précédent
-#    (de haut) est de la même couleur, et que le pion lui soit de
-#    la couleur Symbole donné en paramètre
+#    L'idée principale est de comparer pour un pion précis si le pion
+#    est de la couleur Symbole donné en paramètre
 #    On applique cette vérifications plusieurs fois, dans des bornes calculées
 #    par rapport à la position de la ligne du pion donné en paramètre
 #    On empêche cependant à la vérification de s'effectuer en dehors de la colonne
-#    La vérification s'effectue alors de la ligne-2 jusqu'à la ligne+3,
-#    ainsi qu'à la ligne 1 minimum et la ligne 6 maximum,
-#    vérifiant alors les pions dans les positions de la ligne-3 à la ligne+3,
-#    positionés au minumum à la ligne 0 et au maximum à la ligne 6
+#    La vérification s'effectue alors de la ligne-3 jusqu'à la ligne+3,
+#    ainsi qu'à la ligne 1 minimum et la ligne 6 maximum
 #    On défini alors une variable Récurrence comptant le nombre de vérification
 #    vraie, et cette variable passe la vérification globale verticale vraie
-#    s'il elle a été compté au moins 3 fois d'affilé
+#    s'il elle a été compté au moins 4 fois d'affilé
 
 def verification_diagonale_hautegauche_basdroite(Colonne,Ligne,Symbole,Plateau_de_jeu): #ORIGINAL
     Quatre_Aligne = False
     Recurrence = 0
-    for indice_Colonne in range(Colonne-2,Colonne+4):
-        for indice_Ligne in range(Ligne-2,Ligne+4):
-            if (indice_Colonne > 0 and indice_Ligne > 0 and indice_Ligne <= len(Plateau_de_jeu)-1 and indice_Colonne <= len(Plateau_de_jeu[Ligne])-1):
-                if indice_Ligne-indice_Colonne == Ligne-Colonne :
-                    if (Plateau_de_jeu[indice_Ligne][indice_Colonne] == Plateau_de_jeu[indice_Ligne-1][indice_Colonne-1] and Plateau_de_jeu[indice_Ligne][indice_Colonne] == Symbole):
+    for indice_Colonne in range(Colonne-3,Colonne+4):
+        for indice_Ligne in range(Ligne-3,Ligne+4):
+            if (indice_Colonne >= 0 and indice_Ligne >= 0 and indice_Ligne < len(Plateau_de_jeu) and indice_Colonne < len(Plateau_de_jeu[Ligne])):
+                if indice_Ligne - indice_Colonne == Ligne - Colonne :
+                    if (Plateau_de_jeu[indice_Ligne][indice_Colonne] == Symbole):
                         Recurrence +=1
-                        if Recurrence == 3:
+                        if Recurrence == 4:
                             Quatre_Aligne = True
                     else :
                         Recurrence = 0
@@ -197,13 +192,13 @@ def verification_diagonale_hautegauche_basdroite(Colonne,Ligne,Symbole,Plateau_d
 def verification_diagonale_basgauche_hautedroite(Colonne,Ligne,Symbole,Plateau_de_jeu): #ORIGINAL
     Quatre_Aligne = False
     Recurrence = 0 
-    for indice_Colonne in range(Colonne-2,Colonne+4):
-        for indice_Ligne in range(Ligne+3,Ligne-3,-1):
-            if (indice_Colonne >= 0 and indice_Ligne > 0 and indice_Ligne < len(Plateau_de_jeu)-1 and indice_Colonne <= len(Plateau_de_jeu[Ligne])-1):
-                if ((len(Plateau_de_jeu)-1) - indice_Ligne - indice_Colonne) == ((len(Plateau_de_jeu)-1)-Ligne-Colonne):
-                    if (Plateau_de_jeu[indice_Ligne][indice_Colonne] == Plateau_de_jeu[indice_Ligne+1][indice_Colonne-1] and Plateau_de_jeu[indice_Ligne][indice_Colonne] == Symbole):
+    for indice_Colonne in range(Colonne-3,Colonne+4):
+        for indice_Ligne in range(Ligne+3,Ligne-4,-1):
+            if (indice_Colonne >= 0 and indice_Ligne >= 0 and indice_Ligne < len(Plateau_de_jeu) and indice_Colonne < len(Plateau_de_jeu[Ligne])):
+                if ((len(Plateau_de_jeu)-1) - indice_Ligne - indice_Colonne) == ((len(Plateau_de_jeu)-1) - Ligne - Colonne):
+                    if (Plateau_de_jeu[indice_Ligne][indice_Colonne] == Symbole):
                         Recurrence +=1
-                        if Recurrence == 3:
+                        if Recurrence == 4:
                             Quatre_Aligne = True
                     else :
                         Recurrence = 0
@@ -215,8 +210,8 @@ def verification_diagonale_basgauche_hautedroite(Colonne,Ligne,Symbole,Plateau_d
 #    moins la position de colonne
 #    Le changement de sens de la vérification horizontale demande aussi un
 #    changement des bornes minimum et maximum utilisées pour empêcher des
-#    vérifications en dehors du tableau ; on vérifie alors de la colonne 1
-#    à la colonne 6, et de la ligne 4 à la ligne 0
+#    vérifications en dehors du tableau ; on vérifie alors de la colonne 0
+#    à la colonne 6, et de la ligne 5 à la ligne 0
 
 
 def a_le_joueur_gagne(Colonne,Ligne,Symbole,Plateau_de_jeu): #ORIGINAL, mais mention obligatoire dans 5.1
