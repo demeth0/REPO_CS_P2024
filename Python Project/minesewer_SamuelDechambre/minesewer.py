@@ -2,6 +2,8 @@
 """
 Created on Sun Dec  8 19:44:11 2019
 
+rev 3
+
 @author: Samuel Dechambre
 """
 
@@ -240,7 +242,7 @@ class WinApp(tkinter.Frame):
             #because there is no mines
             #if the case we just clicked is not near a mine just discover the cases around
             #to save some useless click to the player
-            if case_to_discover.getNumberOfMineAroud() == 0 :
+            if case_to_discover.getNumberOfMineAroud() == 0 and not case_to_discover.hasMine():
                 #get the list of cases around the main case and positions
                 case_to_discover_stack , cases_pos = self.getCaseAround(case_row, case_column)
                 #while there is some to discover 
@@ -260,7 +262,7 @@ class WinApp(tkinter.Frame):
                     #just discover the case around her
                     #it's translated by adding the case covered around her in the "to discover"
                     #list
-                    if new_case_to_discover.getNumberOfMineAroud() == 0 :
+                    if new_case_to_discover.getNumberOfMineAroud() == 0 and not new_case_to_discover.hasMine():
                         new_case_to_discover_stack, new_pos_to_add = self.getCoveredCasesAround(new_case_pos[0], new_case_pos[1])
                         case_to_discover_stack += new_case_to_discover_stack
                         #adding the positions too
