@@ -1,167 +1,169 @@
 # Minesewer
-pas encore finis :  
-	condition d'arret (gagner perdre)  
-	interface graphique (bouton, selection / changement parametre)  
-  
-customisation possible avec les variables en début de code (en majuscule)  
+<p>pas encore finis :  
+	<ul><li>condition d'arret (gagner perdre)</li>  
+	<li>interface graphique (bouton, selection / changement parametre)</li></ul>  </p>
+
+<p>J'ai pas eu le temps de commenter je le fait des que je peut pour les edits</p>
+</br>
+<p>customisation possible avec les variables en début de code (en majuscule)  </p>
  <table>
- 	<tr> <!-->*12<-->
- 		<th> <!-->nom<-->
+ 	<tr> 
+ 		<th> 
  			Nom
  		</th>
- 		<th> <!-->valeur par def<-->
+ 		<th> 
  			Default value
  		</th>
- 		<th> <!-->commentaire<-->
+ 		<th> 
  			comment
  		</th>
  	</tr>
- 	<tr> <!-->*12<-->
- 		<th> <!-->nom<-->
+ 	<tr> 
+ 		<th> 
  			FRAME_WIDTH
  		</th>
- 		<th> <!-->valeur par def<-->
+ 		<th> 
  			 700 px
  		</th>
- 		<th> <!-->commentaire<-->
+ 		<th> 
  		</th>
  	</tr>
- 	<tr> <!-->*12<-->
- 		<th> <!-->nom<-->
+ 	<tr> 
+ 		<th> 
  			FRAME_HEIGHT
  		</th>
- 		<th> <!-->valeur par def<-->
+ 		<th> 
  		 	500 px
  		</th>
- 		<th> <!-->commentaire<-->
+ 		<th> 
  		</th>
  	</tr>
- 	<tr> <!-->*12<-->
- 		<th> <!-->nom<-->
+ 	<tr> 
+ 		<th> 
 			BOARD_REFRESH_RATE
  		</th>
- 		<th> <!-->valeur par def<-->
+ 		<th> 
  			int(1000/60)
  		</th>
- 		<th> <!-->commentaire<-->
+ 		<th> 
  			the value is in ms
  		</th>
  	</tr>
- 	<tr> <!-->*12<-->
- 		<th> <!-->nom<-->
+ 	<tr> 
+ 		<th> 
  			BOARD_WIDTH
  		</th>
- 		<th> <!-->valeur par def<-->
+ 		<th> 
  		 	500 px
  		</th>
- 		<th> <!-->commentaire<-->
+ 		<th> 
  		</th>
  	</tr>
- 	<tr> <!-->*12<-->
- 		<th> <!-->nom<-->
+ 	<tr> 
+ 		<th> 
  			BOARD_HEIGHT
  		</th>
- 		<th> <!-->valeur par def<-->
+ 		<th> 
  			500 px
  		</th>
- 		<th> <!-->commentaire<-->
+ 		<th> 
  		</th>
  	</tr>
- 	<tr> <!-->*12<-->
- 		<th> <!-->nom<-->
+ 	<tr> 
+ 		<th> 
  			BOARD_BACKGROUND
  		</th>
- 		<th> <!-->valeur par def<-->
+ 		<th> 
  			"black"
  		</th>
- 		<th> <!-->commentaire<-->
+ 		<th> 
  		</th>
  	</tr>
- 	<tr> <!-->*12<-->
- 		<th> <!-->nom<-->
+ 	<tr> 
+ 		<th> 
  			CASE_WIDTH
  		</th>
- 		<th> <!-->valeur par def<-->
+ 		<th> 
  			1
  		</th>
- 		<th> <!-->commentaire<-->
+ 		<th> 
  			CASE_HEIGHT == CASE_WIDTH  1 represent the relation with the vector X and Y (1*SIZE_X_VECTOR, 1*SIZE_X_VECTOR)
  		</th>
  	</tr>
- 	<tr> <!-->*12<-->
- 		<th> <!-->nom<-->
+ 	<tr> 
+ 		<th> 
  			SIZE_X_VECTOR
  		</th>
- 		<th> <!-->valeur par def<-->
+ 		<th> 
  			30 px
  		</th>
- 		<th> <!-->commentaire<-->
+ 		<th> 
  			if you want to change the scale of the canvas you also need to resize the textures
  		</th>
  	</tr>
- 	<tr> <!-->*12<-->
- 		<th> <!-->nom<-->
+ 	<tr> 
+ 		<th> 
  			SIZE_Y_VECTOR
  		</th>
- 		<th> <!-->valeur par def<-->
+ 		<th> 
  			30 px
  		</th>
- 		<th> <!-->commentaire<-->
+ 		<th> 
  			if you want to change the scale of the canvas you also need to resize the textures
  		</th>
  	</tr>
- 	<tr> <!-->*12<-->
- 		<th> <!-->nom<-->
+ 	<tr> 
+ 		<th> 
  			RES_MINE_CASE
  		</th>
- 		<th> <!-->valeur par def<-->
+ 		<th> 
  			"mine_case_x30.gif"
  		</th>
- 		<th> <!-->commentaire<-->
+ 		<th> 
  			only the file name, will be concatenatedwith the EXTERNAL_RES_FILE_PATH
  		</th>
  	</tr>
- 	<tr> <!-->*12<-->
- 		<th> <!-->nom<-->
+ 	<tr> 
+ 		<th> 
  			RES_COVERED_CASE
  		</th>
- 		<th> <!-->valeur par def<-->
+ 		<th> 
  			"covered_case_x30.gif"
  		</th>
- 		<th> <!-->commentaire<-->
+ 		<th> 
  			only the file name, will be concatenatedwith the EXTERNAL_RES_FILE_PATH
  		</th>
  	</tr>
- 	<tr> <!-->*12<-->
- 		<th> <!-->nom<-->
+ 	<tr> 
+ 		<th> 
  			RES_DISCOVERED_CASE
  		</th>
- 		<th> <!-->valeur par def<-->
+ 		<th> 
  			"discovered_case_x30.gif"
  		</th>
- 		<th> <!-->commentaire<-->
- 			only the file name, will be concatenatedwith the EXTERNAL_RES_FILE_PATH
+ 		<th> 
+ 			only the file name, will be concatenatedwith the EXTERNAL_RES_FILE_PATH. Cette variable n'est pas utilisée deja comprise dans RES_DISCOVERED_CASE_TAGGED
  		</th>
  	</tr>
- 	<tr> <!-->*12<-->
- 		<th> <!-->nom<-->
+ 	<tr>
+ 		<th> 
  			RES_FLAGGED_CASE
  		</th>
- 		<th> <!-->valeur par def<-->
+ 		<th> 
  			"flagged_case_x30.gif"
  		</th>
- 		<th> <!-->commentaire<-->
+ 		<th> 
  			only the file name, will be concatenatedwith the EXTERNAL_RES_FILE_PATH
  		</th>
  	</tr>
- 	<tr> <!-->*12<-->
- 		<th> <!-->nom<-->
+ 	<tr> 
+ 		<th> 
  			RES_DISCOVERED_CASE_TAGGED
  		</th>
- 		<th> <!-->valeur par def<-->
- 			["discovered_case_x30.gif","discovered_case_1_x30.gif","discovered_case_2_x30.gif","discovered_case_3_x30.gif","discovered_case_4_x30.gif","discovered_case_5_x30.gif","discovered_case_6_x30.gif","discovered_case_7_x30.gif","discovered_case_8_x30.gif"]
+ 		<th> 
+ 			["discovered_case_x30.gif","discovered_case_1_x30.gif",  "discovered_case_2_x30.gif","discovered_case_3_x30.gif",   "discovered_case_4_x30.gif","discovered_case_5_x30.gif",  "discovered_case_6_x30.gif","discovered_case_7_x30.gif",  "discovered_case_8_x30.gif"]
  		</th>
- 		<th> <!-->commentaire<-->
+ 		<th> 
  			only the file name, will be concatenatedwith the EXTERNAL_RES_FILE_PATH
  		</th>
  	</tr>
@@ -180,7 +182,5 @@ customisation possible avec les variables en début de code (en majuscule)
 </table>
  	
 
-EXTERNAL_RES_FILE_PATH = "ressources\\"
 
-
-J'ai pas eu le temps de commenter je le fait des que je peut pour les edits.  
+  
