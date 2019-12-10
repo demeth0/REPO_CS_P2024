@@ -11,8 +11,8 @@ import Case
 from random import randint as getRandInt
 
 
-FRAME_WIDTH = 700
-FRAME_HEIGHT = 500
+#FRAME_WIDTH = 700
+#FRAME_HEIGHT = 500
 
 #en ms
 BOARD_REFRESH_RATE = int(1000/60)
@@ -28,7 +28,7 @@ SIZE_Y_VECTOR = 30
 #ressources
 RES_MINE_CASE = "mine_case_x30.gif"
 RES_COVERED_CASE = "covered_case_x30.gif"
-RES_DISCOVERED_CASE = "discovered_case_x30.gif"
+#RES_DISCOVERED_CASE = "discovered_case_x30.gif"
 RES_DISCOVERED_CASE_TAGGED = ["discovered_case_x30.gif",
                               "discovered_case_1_x30.gif",
                               "discovered_case_2_x30.gif",
@@ -84,14 +84,13 @@ class WinApp(tkinter.Frame):
         #image ressource init
         self.img_mine_case = tkinter.PhotoImage(file=EXTERNAL_RES_FILE_PATH+RES_MINE_CASE)
         self.img_flagged_case = tkinter.PhotoImage(file=EXTERNAL_RES_FILE_PATH+RES_FLAGGED_CASE)
-        self.img_discovered_case = tkinter.PhotoImage(file=EXTERNAL_RES_FILE_PATH+RES_DISCOVERED_CASE)
+        #self.img_discovered_case = tkinter.PhotoImage(file=EXTERNAL_RES_FILE_PATH+RES_DISCOVERED_CASE)
         self.img_covered_case = tkinter.PhotoImage(file=EXTERNAL_RES_FILE_PATH+RES_COVERED_CASE)
         
         self.img_discovered_case_tagged = []
         for path in RES_DISCOVERED_CASE_TAGGED :
             self.img_discovered_case_tagged = self.img_discovered_case_tagged+[tkinter.PhotoImage(file=EXTERNAL_RES_FILE_PATH+path)]
         #init cases
-        row_number, column_number = matrice.getDimention(self.gameboard_matrice)
         for i in range(self.row):
             for j in range(self.column) :
                 self.gameboard_matrice[i][j] = Case.Case(contain_mine = False)
