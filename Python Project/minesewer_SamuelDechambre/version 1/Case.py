@@ -10,63 +10,59 @@ MINED_STAT = 2
 FLAGGED_STAT = 3
 
 class Case(object):
-    __contain_mine = None
-    __discovered = None
-    __flagged = None
-    __number_mine_around = 0
-    __statue = 0
+    contain_mine = None
+    discovered = None
+    flagged = None
+    number_mine_around = None
+    statue = None
     
-    def __init__(self):
-        self.__contain_mine = False
-        self.__discovered = False
-        self.__flagged = False
-        self.__generateStatue()
+    def __init__(self, contain_mine = False):
+        self.contain_mine = contain_mine
+        self.discovered = False
+        self.flagged = False
+        self.number_mine_around = 0
+        self.statue = 0
         
     def hasMine(self):
-        return self.__contain_mine
+        return self.contain_mine
     #return if the operation success (if the case isn't discovered)
     def setMine(self):
-        if not self.__discovered :
-            self.__contain_mine = True
-            self.__generateStatue()
-        return not self.__discovered
+        if not self.discovered :
+            self.contain_mine = True
+        return not self.discovered
     
     #return if the operation success (if the case isn't discovered)
     def unsetMine(self):
-        if not self.__discovered :
-            self.__contain_mine = False
-            self.__generateStatue()
-        return not self.__discovered
+        if not self.discovered :
+            self.contain_mine = False
+        return not self.discovered
         
     def discover(self):
-        if not self.__flagged :
-            self.__discovered = True
-            self.__generateStatue()
+        if not self.flagged :
+            self.discovered = True
         
     def isDiscovered(self):
-        return self.__discovered
+        return self.discovered
     
     def flag(self):
-        if not self.__discovered :
-            self.__flagged = True
-            self.__generateStatue()
+        if not self.discovered :
+            self.flagged = True
     def unflag(self):
-        if not self.__discovered :
-            self.__flagged = False
-            self.__generateStatue()
+        if not self.discovered :
+            self.flagged = False
     def isFlagged(self):
-        return self.__flagged
+        return self.flagged
     
     def addMineToNumberOfMineAround(self):
-        self.__number_mine_around += 1 
+        self.number_mine_around += 1 
     
     def getNumberOfMineAroud(self):
-        return self.__number_mine_around
+        return self.number_mine_around
     
     #0:covered     1:discovered       2:discovered(bomb)      3:flagged
     #if the case is brocken it will return -1
     #to let the system know that we need to change the texture type of the case
-    def __generateStatue(self):
+    def generateStatue(self):
         int_state = 0
         if self.isDiscovered() :
             if self.hasMine():
@@ -79,10 +75,10 @@ class Case(object):
             else :
                 int_state = COVERED_STAT
                 
-        self.__statue = int_state
+        self.statue = int_state
         
     def getStat(self):
-        return self.__statue
+        return self.statue
     
         
         
