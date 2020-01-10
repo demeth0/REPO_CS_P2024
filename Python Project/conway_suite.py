@@ -26,9 +26,6 @@ lst_r = [TERM_0]
 for i in range(1,TERM_N):
     lst_r = generateNextTerm(lst_r)
     
-str_l = ""
-for i in lst_r :
-    str_l = str_l + i
     
 #si ca lag trop supprimer la ligne print ici et aller dans variable explorer -> str_l -> clic droit -> copier
-print(str_l)
+print(len(lst_r))
