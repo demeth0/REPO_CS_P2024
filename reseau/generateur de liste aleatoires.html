@@ -282,12 +282,12 @@
 
         function updateAnswerGUI(){
         	if(data != null)
-        		document.getElementById("output_answer").innerHTML = "Moyenne : "+data[3]+"<br>Médiane : "+data[4]+"<br> étendue : "+(data[2][data[2].length-1]-data[2][0]);
+        		document.getElementById("output_answer").innerHTML = "Moyenne : "+data[3]+"<br>Mediane : "+data[4]+"<br> etendue : "+(data[2][data[2].length-1]-data[2][0]);
         }
         
 		function drawRoundFiled(){
 			if(!document.querySelector(".option").checked){
-				document.querySelector("#rf_option").innerHTML = "&nbsp &nbsp <label>nombre de décimales &nbsp <input  id=\"round_fiel\" type=\"number\" placeholder=\"3\"></label>";
+				document.querySelector("#rf_option").innerHTML = "&nbsp &nbsp <label>nombre de decimales &nbsp <input  id=\"round_fiel\" type=\"number\" placeholder=\"3\"></label>";
 			}else{
 				document.querySelector("#rf_option").innerHTML = "";
 			}
@@ -345,10 +345,10 @@
 			</div>
 		</li>
 		<li>
-			<label>liste triée &nbsp<input class="option" type="checkbox" checked></label>
+			<label>liste triee &nbsp<input class="option" type="checkbox" checked></label>
 		</li>
 		<li>
-			<label>mode fréquences calculées &nbsp<input class="option" type="checkbox"></label>
+			<label>mode frequences calculees &nbsp<input class="option" type="checkbox"></label>
 		</li>
 		<li>
 			<label>taille de la liste &nbsp <input class="number_field" type="number" placeholder="15" ></label>
@@ -360,14 +360,14 @@
 			<label>valeur maximal &nbsp <input  class="number_field" type="number" placeholder="20"></label>
 		</li>
 		<li>
-			<button onclick="updateGUI();">appliquer/regénérer</button>
+			<button onclick="updateGUI();">appliquer/regenerer</button>
 		</li>
 	</ul>
 	<div id="output">
 		
 	</div>
 	<br>
-	<button onclick="updateAnswerGUI();">afficher moyenne et médiane</button>
+	<button onclick="updateAnswerGUI();">afficher moyenne et mediane</button>
 		<div id="output_answer">
 		<table></table>
 	</div>
