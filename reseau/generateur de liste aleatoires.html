@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- #author Samuel Dechambre-->
+	<title>list generator</title>
+	<script type="text/javascript">
+		function euclidian_div(value, diviser){
+			return (value-value%diviser)/diviser;
+		}
+
+		function round(value, decimal){
+			let rounded = Math.floor(value*Math.pow(10,decimal));
+			return rounded/(Math.pow(10,decimal));
+		}
+
+		//algorythme de recherche
+		function inDichotomic(liste, value){
+			var inf_born = 0;
+			var supp_born = liste.length;
+
+			var listChecked = false;
+			var isIn = false;	
+			while(!isIn && !listChecked){
+				var middle = euclidian_div(supp_born-inf_born, 2)+inf_born
+				if(supp_born-inf_born <= 1){
+					listChecked = true;
+				}
+				if(liste[middle]==value){
+					isIn = true;
+				}else if(liste[middle]<value){
+					inf_born = middle;
+				}else{
+					supp_born = middle;
+				}
+			}
+			return isIn;
+		}
+
+		function randInt(inf, supp){
+			return Math.floor((supp+1-inf)*Math.random()+inf);
+		}
+
+		function randFloat(inf , supp){
+			return (supp+1-inf)*Math.random()+inf;
+		}
+
+		function getRandList(size, min, max, banned, integer_only){
+			index = 0;
+			liste = [];
+			while(index < size){
+				var random = 0;
+				
+				if(integer_only){
+					random = randInt(min,max);
+				}else{
+					random = randFloat(min,max);
+				}
+
+				if(!inDichotomic(banned, random)){
+					liste.push(random);	
+					index++;
+				}
+			}
+			return liste;
+		}
+
+        function merge(liste1,liste2, start){
+        	var copy_of_list1 = [];
+        	for(let i = 0 ; i < liste1.length ; i++){
+        		copy_of_list1.push(liste1[i]);
+        	}
+        	for(let i = start ; i < liste2.length ; i++){
+        		copy_of_list1.push(liste2[i]);
+        	}
+
+        	return copy_of_list1;
+        }
+
+		function cut(liste,start,end){
+        	var copy_of_list1 = [];
+        	for(let i = start ; i < end ; i++){
+        		copy_of_list1.push(liste1[i]);
+        	}
+
+        	return copy_of_list1;
+        }
+
+        function copy(liste){
+        	let copy = [];
+        	for(let i = 0 ; i < liste.length ; i++){
+        		copy.push(liste[i]);
+        	}
+        	return copy;
+        }
+
+		function writelist(liste){
+	        for(let i = 0 ; i < liste.length;i++){
+				document.write(liste[i]+"/");
+			}	
+        }
+
+        /**************************************************************************
+		*								tri fusion 								  *
+        ***************************************************************************/
+
+        function fusionSorting_SortedMerging(value_list_1,value_list_2){
+        	var result_list = [];
+        	var index_list_1 = index_list_2 = 0;
+        	while(index_list_1 < value_list_1.length || index_list_2 < value_list_2.length){
+        		if(index_list_1 >= value_list_1.length) {
+        			result_list = merge(result_list,value_list_2,index_list_2);
+                	index_list_2 = value_list_2.length;
+                	//arreter la boucle
+        		}else if(index_list_2 >= value_list_2.length){
+        			result_list = merge(result_list,value_list_1,index_list_1);
+                	index_list_1 = value_list_1.length;
+        		}else{
+        			if(value_list_1[index_list_1] <= value_list_2[index_list_2]){
+        				result_list.push(value_list_1[index_list_1]);
+	                    index_list_1 ++;
+        			}else{
+        				result_list.push(value_list_2[index_list_2]);
+	                    index_list_2++;
+        			}
+        		}
+        	}
+        	return result_list;
+        }
+
+        function fusionSorting_2p2merging(list_value_list){
+        	let list_order_2 = [];
+        	let i = 0;
+	        while(i < list_value_list.length){
+	            if(i+1 < list_value_list.length){
+	                list_order_2.push(fusionSorting_SortedMerging(list_value_list[i], list_value_list[i+1]));
+	                i += 2;
+	            }else{
+	                list_order_2.push(list_value_list[i]);
+	                i+=1;
+	            }
+	        }
+	        return list_order_2;
+        }
+
+        function fusionSorting(value_list){
+        	result_value_list = [];
+        	for(let i = 0 ; i < value_list.length ; i++){
+        		result_value_list.push([value_list[i]]);
+        	}
+		    while(result_value_list.length >1){
+		        result_value_list = fusionSorting_2p2merging(result_value_list);
+		    }
+		    return result_value_list[0];
+        }
+
+        /*******************************************************************
+		*					    calculateurs de proba 					   *
+        ********************************************************************/
+
+        function getMean(value_list){
+        	let sum = 0;
+        	for(let i = 0 ; i<value_list.length ; i++){
+        		sum += value_list[i];
+        	}
+        	return sum/value_list.length;
+        }
+
+        function getMedian(value_list){
+			let size = value_list.length;
+		    let med = 0;
+		    if(size%2 == 1){
+		        med = (value_list[euclidian_div(size,2)]);
+		    }
+		    else{
+		        med = (value_list[size/2-1]+value_list[size/2])/2;
+		    }
+		    return med;
+        }
+
+        function toFrequencyMode(liste){
+			let value_set = [];
+		    let frequency_set = [];
+		    let index = 0
+		    let temp = liste[0]
+		    let frequency = 0
+		    while(index < liste.length){
+		        if(liste[index] == temp){
+		            frequency += 1;
+		        }
+		        else{
+		        	value_set.push(temp);
+		            frequency_set.push(frequency);
+		            temp = liste[index];
+		            frequency = 1;
+		        }
+		        index += 1;
+		    }
+		    value_set.push(temp);
+		    frequency_set.push(frequency);
+		    
+		    return [value_set, frequency_set];
+        }
+
+        function generateListe(size, min, max, banned, integer_only, sorted, frequency_mode, round_unit){
+		    let liste = getRandList(size, min, max, banned, integer_only);
+		    if(!integer_only){
+		    	for(let i = 0 ; i<liste.length ; i++){
+		    		liste[i] = round(liste[i], round_unit);
+		    	}
+		    }
+		    let backup = fusionSorting(copy(liste));
+		    frequency = [];
+		    if(sorted){
+		        liste = copy(backup);
+		    }
+		        
+		    let mean = round(getMean(backup),round_unit+3);
+		    let median = round(getMedian(backup),round_unit+3);
+		        
+		    if(frequency_mode){
+		    	if(!sorted){
+		            liste = copy(backup);
+		        }
+		        format_result = toFrequencyMode(liste);
+		        liste = format_result[0];
+		        frequency = format_result[1];
+		    }
+		        
+		        
+		    return [liste,frequency,backup,mean,median];
+		}
+
+		//[liste,frequency,backup,mean,median];
+		function toHtml(ldata){
+			str_result = "<table id=\"content_table\"><tr><th>valeurs</th>"
+			for(let i = 0 ; i<ldata[0].length ; i++){
+				str_result = str_result + "<th>"+ldata[0][i];+"</th>"
+			}
+			
+			if(ldata[1].length > 0){
+				str_result = str_result + "</tr><th>frequences</th>";
+				for(let i = 0 ; i<ldata[1].length ; i++){
+					str_result = str_result + "<th>"+ldata[1][i];+"</th>"
+				}
+			}
+
+			str_result = str_result + "</tr></table>"
+			return str_result;
+		}
+
+		function getNumber(number_field, default_value){
+			let num = parseInt(number_field.value);
+			if(isNaN(num)){
+        		num = default_value;
+        	}
+
+        	return num;
+		}
+
+        function updateGUI(){
+        	let checkOption = document.querySelectorAll(".option");
+        	let numberOption = document.querySelectorAll(".number_field");
+
+        	let integer_only = checkOption[0].checked;
+        	let sorted = checkOption[1].checked;
+        	let frequency_mode = checkOption[2].checked;
+
+        	let rounded_unit = 0;
+        	if(!integer_only){
+        		rounded_unit = getNumber(document.querySelector("#round_fiel"),3);
+        	}
+
+        	let size = getNumber(numberOption[0],15);
+        	let min_val = getNumber(numberOption[1],0);
+        	let max_val = getNumber(numberOption[2],20);
+
+        	data = generateListe(size,min_val,max_val,[],integer_only,sorted,frequency_mode,rounded_unit);
+
+        	document.getElementById("output").innerHTML = toHtml(data);
+        	document.getElementById("output_answer").innerHTML = "";
+        }
+
+        function updateAnswerGUI(){
+        	if(data != null)
+        		document.getElementById("output_answer").innerHTML = "Moyenne : "+data[3]+"<br>Médiane : "+data[4]+"<br> étendue : "+(data[2][data[2].length-1]-data[2][0]);
+        }
+        
+		function drawRoundFiled(){
+			if(!document.querySelector(".option").checked){
+				document.querySelector("#rf_option").innerHTML = "&nbsp &nbsp <label>nombre de décimales &nbsp <input  id=\"round_fiel\" type=\"number\" placeholder=\"3\"></label>";
+			}else{
+				document.querySelector("#rf_option").innerHTML = "";
+			}
+		}
+
+
+
+		var data = null;
+
+        var data_loaded = false;
+		
+	</script>
+	<style type="text/css">
+		*{
+
+		}
+		#content_table tr{
+			margin: 0 0 0 0;
+			padding: 0 0 0 0;
+		}
+		#content_table tr th{
+			font-size: 1.2em;
+			border: 1px solid black;
+			margin:0 0 0 0;
+			padding: 0.2em 0.2em 0.2em 0.2em;
+		}
+
+		li {
+			margin-bottom: 0.2em;
+		}
+
+		#output{
+			width: calc(100% - 4em);
+			padding: 2em 2em 2em 2em;
+			margin: 2em 0 0 0;
+			overflow-x: scroll;
+			border: 2px solid black;
+		}
+
+		#output_answer{
+			font-size: 1.2em;
+			width: calc(100% - 4em);
+			padding: 2em 2em 2em 2em;
+			margin: 2em 0 0 0;
+			border: 2px solid black;
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li>
+			<label>entiers uniquement &nbsp<input onclick="drawRoundFiled();" class="option" type="checkbox" checked></label>
+			<div id="rf_option">
+				
+			</div>
+		</li>
+		<li>
+			<label>liste triée &nbsp<input class="option" type="checkbox" checked></label>
+		</li>
+		<li>
+			<label>mode fréquences calculées &nbsp<input class="option" type="checkbox"></label>
+		</li>
+		<li>
+			<label>taille de la liste &nbsp <input class="number_field" type="number" placeholder="15" ></label>
+		</li>
+		<li>
+			<label>valeur minimal &nbsp <input  class="number_field" type="number" placeholder="0"></label>
+		</li>
+		<li>
+			<label>valeur maximal &nbsp <input  class="number_field" type="number" placeholder="20"></label>
+		</li>
+		<li>
+			<button onclick="updateGUI();">appliquer/regénérer</button>
+		</li>
+	</ul>
+	<div id="output">
+		
+	</div>
+	<br>
+	<button onclick="updateAnswerGUI();">afficher moyenne et médiane</button>
+		<div id="output_answer">
+		<table></table>
+	</div>
+</body>
+</html>
